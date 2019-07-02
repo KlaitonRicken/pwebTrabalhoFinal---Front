@@ -1,0 +1,72 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>{{editando?'Edicao de ': 'Nova '}} Utilização</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+
+              <label>Selecione um veículo</label>
+              <p-dropdown [options]="veiculos"
+                [(ngModel)]="utilizacao.veiculo_id.id"
+                name = "veiculo" [filter]="true">
+              </p-dropdown>
+
+              <label>Selecione um funcionário</label>
+              <p-dropdown [options]="funcionarios"
+                [(ngModel)]="utilizacao.funcionario_id.id"
+                name = "funcionario" [filter]="true" >
+              </p-dropdown>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Data</label>
+              <input pInputText type="text" name="data"
+                [(ngModel)]="utilizacao.data"
+                #nome="ngModel" required minlength="8">
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe uma data</div>
+                <div *ngIf="nome.hasError('minlength')">A data deve ter no mínimo 8 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Hora</label>
+              <input pInputText type="text" name="hora"
+                [(ngModel)]="utilizacao.hora"
+                #nome="ngModel" required minlength="4">
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um horário</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 4 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Quilometragem inicial</label>
+              <input pInputText type="text" name="kmInicial"
+                [(ngModel)]="utilizacao.kmInicial"
+                #nome="ngModel" required minlength="1">
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe uma quilometragem</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 1 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Quilimetragem final</label>
+              <input pInputText type="text" name="kmFinal"
+                [(ngModel)]="utilizacao.kmFinal"
+                #nome="ngModel" required minlength="1">
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe uma quilometragem</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 1 caractares</div>
+            </div>
+
+          </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton2" routerLink="/utilizacoes/novo"></button>
+                <a class = "link" routerLink="/utilizacoes">Voltar para a pesquisa</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+

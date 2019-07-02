@@ -1,0 +1,60 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>{{editando?'Edicao de ': 'Novo '}} Veículo</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Ano do veículo</label>
+              <input pInputText type="text" name="ano"
+                [(ngModel)]="veiculo.ano"
+                #nome="ngModel" required minlength="4">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um ano</div>
+                <div *ngIf="nome.hasError('minlength')">O ano deve ter no mínimo 4 caracteres</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Marca do veículo</label>
+              <input pInputText type="text" name="marca"
+                [(ngModel)]="veiculo.marca"
+                #nome="ngModel" required minlength="2">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe uma marca</div>
+                <div *ngIf="nome.hasError('minlength')">A marca deve ter no mínimo 2 caracteres</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Modelo do veículo</label>
+              <input pInputText type="text" name="modelo"
+                [(ngModel)]="veiculo.modelo"
+                #nome="ngModel" required minlength="2">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um modelo</div>
+                <div *ngIf="nome.hasError('minlength')">O modelo deve ter no mínimo 2 caracteres</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Placa do veículo</label>
+              <input pInputText type="text" name="placa"
+                [(ngModel)]="veiculo.placa"
+                #nome="ngModel" required minlength="7">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe uma placa</div>
+                <div *ngIf="nome.hasError('minlength')">A placa deve ter no mínimo 7 caracteres</div>
+            </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton2" routerLink="/veiculos/novo"></button>
+                <a class = "link" routerLink="/utilizacoes">Voltar para a pesquisa</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+

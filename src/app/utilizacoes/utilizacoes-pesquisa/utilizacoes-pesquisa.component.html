@@ -1,0 +1,77 @@
+<p-toast></p-toast>
+
+<p-confirmDialog header="Confirmação" icon="pi pi-question-circle" acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
+
+<div class="container">
+
+  <form autocomplete="off" (ngSubmit)="pesquisar()">
+   <div class="ui-g">
+    <div class="ui-g-12">
+      <h1>
+        Lista de Utilizações
+      </h1>
+    </div>
+    <div class="ui-g-12 ui-fluid">
+        <label>Pesquisar por data da utilização</label>
+        <input pInputText type="text" name="data"  [(ngModel)]="dataBusca">
+    </div>
+    <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar"></button>
+    </div>
+   </div>
+  </form>
+
+  <div class="ui-g">
+      <div class="ui-g-12">
+          <p-table [value]="utilizacoes" [paginator]="true" [rows]="5" [responsive]="true">
+              <ng-template pTemplate="header">
+                  <tr>
+                    <th class="col-id-header">Id</th>
+                    <th>Data</th>
+                    <th>Hora</th>
+                    <th>Funcionário</th>
+                    <th>Veículo</th>
+                    <th>Km Inicial</th>
+                    <th>Km Final</th>
+                    <th class="col-acoes"> Ações </th>
+                  </tr>
+               </ng-template>
+
+               <ng-template pTemplate="body" let-uti>
+                  <tr>
+                    <td class="col-id">{{uti.id}}</td>
+                    <td class="col-id">{{uti.data}}</td>
+                    <td class="col-id">{{uti.hora}}</td>
+                    <td class="col-id">{{uti.funcionario.nome}}</td> <!--nomeFuncionariio  -->
+                    <td class="col-id">{{uti.veiculo.marca + '/' + uti.veiculo.modelo}}</td>
+                    <td class="col-id">{{uti.kmInicial}}</td>
+                    <td class="col-id">{{uti.kmFinal}}</td>
+                    <td class="col-acoes">
+                        <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000"  class="ui-button-info" class="button" [routerLink]="['/utilizacoes',uti.id]"></button>
+                        <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000" class="ui-button-danger" (click)="confirmarExclusao(uti)"></button>
+                    </td>
+                  </tr>
+              </ng-template>
+
+          </p-table>
+      </div>
+
+      <div class="ui-g-12">
+        <a pButton label="Cadastro de novo Funcionário(a)" routerLink="/funcionarios/novo"></a>
+      </div>
+
+      <div class="ui-g-12">
+          <a pButton label="Cadastro de novo Veículo" routerLink="/veiculos/novo"></a>
+        </div>
+
+      <!-- <div class="ui-g-12">
+        <a class="rotas" routerLink="/funcionarios">Ir para a Lista de Funcionários</a>
+      </div>
+
+      <div class="ui-g-12">
+        <a class="rotas" routerLink="/veiculos">Ir para a Lista de Veículos</a>
+      </div> -->
+
+  </div>
+</div>
+

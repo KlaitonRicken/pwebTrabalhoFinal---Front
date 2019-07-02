@@ -1,0 +1,21 @@
+
+<p-sidebar [(visible)] = "sideBar">
+  <div class= "ui-g-12 ui-fluid">
+    <h1 class="boxButton">Menu</h1>
+    <button type="button" (click)="sideBar = false"
+    pButton label = "Cadastro de Funcionários"
+    routerLink="/funcionarios/novo" class="boxButton"></button>
+    <button type="button" (click)="sideBar = false"
+    pButton label = "Cadastro de Veículos"
+    routerLink="/veiculos/novo" class="boxButton"></button>
+    <button type="button" (click)="sideBar = false"
+    pButton label = "Cadatro de Utilizações"
+    routerLink="/utilizacoes/novo" class="boxButton"></button>
+  </div>
+
+</p-sidebar>
+
+<button type="button" (click)="sideBar = true" pButton icon="pi pi-bars" class="boxButton"></button>
+
+
+<router-outlet></router-outlet>
