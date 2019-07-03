@@ -1,14 +1,17 @@
 
-<p-sidebar [(visible)] = "sideBar">
+<p-sidebar class = "menu" [(visible)] = "sideBar">
   <div class= "ui-g-12 ui-fluid">
     <h1 class="boxButton">Menu</h1>
     <button type="button" (click)="sideBar = false"
+    icon="pi pi-user"
     pButton label = "Cadastro de Funcionários"
     routerLink="/funcionarios/novo" class="boxButton"></button>
     <button type="button" (click)="sideBar = false"
+    icon="pi pi-circle-off"
     pButton label = "Cadastro de Veículos"
     routerLink="/veiculos/novo" class="boxButton"></button>
     <button type="button" (click)="sideBar = false"
+    icon="pi pi-plus"
     pButton label = "Cadatro de Utilizações"
     routerLink="/utilizacoes/novo" class="boxButton"></button>
   </div>

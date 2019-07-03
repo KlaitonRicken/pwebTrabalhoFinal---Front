@@ -1,7 +1,8 @@
+import { VeiculosModule } from './veiculos/veiculos.module';
 import { UtilizacoesPesquisaComponent } from './utilizacoes/utilizacoes-pesquisa/utilizacoes-pesquisa.component';
 import { UtilizacoesCadastroComponent } from './utilizacoes/utilizacoes-cadastro/utilizacoes-cadastro.component';
 import { UtilizacoesModule } from './utilizacoes/utilizacoes.module';
-import { VeiculosModule } from './veiculos/veiculos.module';
+
 import { FuncionariosCadastroComponent } from './funcionarios/funcionarios-cadastro/funcionarios-cadastro.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
