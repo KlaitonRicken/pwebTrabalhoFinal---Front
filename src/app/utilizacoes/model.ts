@@ -4,10 +4,9 @@ export class Utilizacao{
   hora: string;
   kmInicial: number;
   kmFinal: number;
-  veiculo_id = new Veiculo();
-  funcionario_id = new Funcionario();
+  veiculo = new Veiculo();
+  funcionario = new Funcionario();
 }
-
 export class Funcionario{
   id: number;
   nome: string;
