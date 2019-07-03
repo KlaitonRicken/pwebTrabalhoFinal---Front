@@ -13,13 +13,13 @@
               <label>Selecione um veículo</label>
               <p-dropdown [options]="veiculos"
                 [(ngModel)]="utilizacao.veiculo.id"
-                name = "veiculo" [filter]="true" >
+                name = "veiculo" placeholder="Selecione um veículo" [filter]="true" >
               </p-dropdown>
 
               <label>Selecione um funcionário</label>
               <p-dropdown [options]="funcionarios"
                 [(ngModel)]="utilizacao.funcionario.id"
-                name = "funcionario" [filter]="true" >
+                name = "funcionario" placeholder="Selecione um funcionário" [filter]="true" >
               </p-dropdown>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">

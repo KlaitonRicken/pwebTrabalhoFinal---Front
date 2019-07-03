@@ -7,10 +7,6 @@ export class Utilizacao{
   veiculo = new Veiculo();
   funcionario = new Funcionario();
 }
-export class Funcionario{
-  id: number;
-  nome: string;
-}
 
 export class Veiculo{
   id: number;
@@ -18,4 +14,8 @@ export class Veiculo{
   placa: string;
   marca: string;
   modelo: string;
+}
+export class Funcionario{
+  id: number;
+  nome: string;
 }

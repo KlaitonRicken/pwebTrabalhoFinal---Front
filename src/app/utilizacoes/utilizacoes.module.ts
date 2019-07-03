@@ -1,6 +1,6 @@
+import { VeiculosService } from './../veiculos/veiculos.service';
 import { FuncionariosService } from './../funcionarios/funcionarios.service';
 import { MessageService } from 'primeng/api';
-import { VeiculosService } from './../veiculos/veiculos.service';
 import { DropdownModule } from 'primeng/dropdown';
 import { RouterModule } from '@angular/router';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
